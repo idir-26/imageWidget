@@ -62,6 +62,7 @@ class imageView extends WidgetView {
 		this.footer.innerHTML = "valider"; //pour demarer la recherche.
 		SS.style(this.footer,{"userSelect": "none", "cursor":"pointer"});
 		this.click = this.footer.addEventListener("click", event => this.mvc.controller.valider());
+		// Event.on(this.footer, "click", event =>this.mvc.controller.valider());
 		this.stage.appendChild(this.footer);
 		
 		this.afficher = HH.create("b");
