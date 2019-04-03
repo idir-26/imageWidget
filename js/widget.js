@@ -64,8 +64,8 @@ class imageView extends WidgetView {
 		this.click = this.footer.addEventListener("click", event => this.mvc.controller.valider());
 		this.stage.appendChild(this.footer);
 		
-	
-		
+		this.afficher = HH.create("b");
+		this.stage.appendChild(this.afficher);
 		
 	}
 	
