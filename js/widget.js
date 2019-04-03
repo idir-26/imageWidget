@@ -60,7 +60,7 @@ class imageView extends WidgetView {
 	
 	update(title, link) {
 		this.link.innerHTML = title;
-		HH.attr(this.link, {"href": "https://www.google image.fr" + link, "target": "_blank"});
+		HH.attr(this.link, {"href": "https://www.google.com/search?q=mot&client=firefox-b-e&source=lnms&tbm=isch"});
 	}
 	
 }
@@ -79,7 +79,7 @@ class imageController extends WidgetController {
 	async load() {
 		tihs.mot = document.getElementById("champTexte").value //mettre le mot dans une variable
 		
-		let result = await this.mvc.main.dom("https://google+image.fr"); // load web page
+		let result = await this.mvc.main.dom("https://www.google.com/search?q=mot&client=firefox-b-e&source=lnms&tbm=isch"); // load web page
 		let domstr = _atob(result.response.dom); // decode result
 		let parser = new DOMParser(); // init dom parser
 		let dom = parser.parseFromString(domstr, "text/html"); // inject result
