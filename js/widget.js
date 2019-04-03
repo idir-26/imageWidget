@@ -51,8 +51,7 @@ class imageView extends WidgetView {
 		SS.style(this.link, {"fontSize": "10px", "textDecoration": "none"});
 		this.stage.appendChild(this.link);
 		
-		this.bloc = HH.create("input");
-		id = "champTexte" size = "39" type = "texte"
+		this.bloc = HH.create("input"); //creer un camp texte.	id = "champTexte" size = "39" type = "texte"
 		this.bloc.setAttribute("id","champTexte");
 		this.bloc.setAttribute("size","39");
 		this.bloc.setAttribute("type","texte");
