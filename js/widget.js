@@ -52,7 +52,7 @@ class imageView extends WidgetView {
 		this.stage.appendChild(this.link);
 		
 		this.mvc.controller.select();
-		this.footer.innerHTML = "valider"; //pour demarer la recherche
+		this.footer.innerHTML = "valider"; //pour demarer la recherche.
 		ss.style(this.footer,{"userSelect": "none", "cursor":"pointer"});
 		this.click = this.footer.addEventListener("click", event => this.mvc.controller.valider());
 		this.stage.appendChild(this.footer);
@@ -62,6 +62,11 @@ class imageView extends WidgetView {
 		this.bloc.setAttribute("size","39");
 		this.bloc.setAttribute("type","texte");
 		this.stage.appendChild(this.bloc);
+		
+		this.afficher = HH.create("b");
+		this.stage.appendChild(this.afficher);
+		
+		
 	}
 	
 	update(title, link) {
