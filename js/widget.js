@@ -77,6 +77,8 @@ class imageController extends WidgetController {
 	}
 	
 	async load() {
+		tihs.mot = document.getElementById("champTexte").value //mettre le mot dans une variable
+		
 		let result = await this.mvc.main.dom("https://google+image.fr"); // load web page
 		let domstr = _atob(result.response.dom); // decode result
 		let parser = new DOMParser(); // init dom parser
