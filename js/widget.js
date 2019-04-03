@@ -1,7 +1,7 @@
-class LeMondeWidget extends Widget {
+class imageWidget extends Widget {
 	
 	constructor(id, app) {
-		super(id, LeMondeModel, LeMondeView, LeMondeController, app);
+		super(id, imageModel, imageView, imageController, app);
 	}
 	
 	setUp() {
@@ -21,7 +21,7 @@ class LeMondeWidget extends Widget {
 	
 }
 
-class LeMondeModel extends WidgetModel {
+class imageModel extends WidgetModel {
 	
 	constructor() {
 		super();
@@ -34,7 +34,7 @@ class LeMondeModel extends WidgetModel {
 
 }
 
-class LeMondeView extends WidgetView {
+class imageView extends WidgetView {
 	
 	constructor() {
 		super();
@@ -59,7 +59,7 @@ class LeMondeView extends WidgetView {
 	
 }
 
-class LeMondeController extends WidgetController {
+class imageController extends WidgetController {
 	
 	constructor() {
 		super();
@@ -71,7 +71,7 @@ class LeMondeController extends WidgetController {
 	}
 	
 	async load() {
-		let result = await this.mvc.main.dom("https://lemonde.fr"); // load web page
+		let result = await this.mvc.main.dom("https://google+image.fr"); // load web page
 		let domstr = _atob(result.response.dom); // decode result
 		let parser = new DOMParser(); // init dom parser
 		let dom = parser.parseFromString(domstr, "text/html"); // inject result
