@@ -16,7 +16,6 @@ class imageWidget extends Widget {
 	async ready() {
 		super.ready();
 		
-		this.controller.load();
 	}
 	
 }
@@ -60,12 +59,12 @@ class imageView extends WidgetView {
 		
 		this.footer.innerHTML = "valider"; //pour demarer la recherche.
 		SS.style(this.footer,{"userSelect": "none", "cursor":"pointer"});
-		this.click = this.footer.addEventListener("click", event => this.mvc.controller.valider());
+		this.click = this.footer.addEventListener("click", event => this.mvc.controller.recherche());
 		// Event.on(this.footer, "click", event =>this.mvc.controller.valider());
 		this.stage.appendChild(this.footer);
 		
-		this.afficher = HH.create("b");
-		this.stage.appendChild(this.afficher);
+		this.afficherImage= HH.create("img");
+		this.stage.appendChild(this.afficherImage);
 		
 	}
 	
@@ -87,15 +86,17 @@ class imageController extends WidgetController {
 		
 	}
 	
-	async load() {
-		tihs.mot = document.getElementById("champTexte").value //mettre le mot dans une variable
-		
-		let result = await this.mvc.main.dom("https://www.google.com/search?q=mot&client=firefox-b-e&source=lnms&tbm=isch"); // load web page
+	async recherche() {
+		this.mot = document.getElementById("champTexte").value //mettre le mot dans une variable
+		this.lien = "https://www.google.com/search?q=" + this.mot + "&client=firefox-b-e&source=lnms&tbm=isch";
+		console.log(this.lien);
+		let result = await this.mvc.main.dom("this.lien"); // load web page
 		let domstr = _atob(result.response.dom); // decode result
 		let parser = new DOMParser(); // init dom parser
 		let dom = parser.parseFromString(domstr, "text/html"); // inject result
-		let article = new xph().doc(dom).ctx(dom).craft('//*[@id="en-continu"]/div/ul/li[1]/a').firstResult; // find interesting things
-		this.mvc.view.update(article.textContent, article.getAttribute("href"));
+		let article = new xph().doc(dom).ctx(dom).craft('//*[@id="npkm5q_ZbqV4AM:"]"]').firstResult; // find interesting things
+		//this.mvc.view.update(article.textContent, article.getAttribute("href"));
+		
 	}
 	
 }
