@@ -68,10 +68,9 @@ class imageView extends WidgetView {
 		
 	}
 	
-	/*update(title, link) {
-		this.link.innerHTML = title;
-		HH.attr(this.link, {"href": "https://www.google.com/search?q=mot&client=firefox-b-e&source=lnms&tbm=isch"});
-	}*/
+	update(image) {
+		this.afficherImage.innerHTML = image;
+	}
 	
 }
 
@@ -95,7 +94,7 @@ class imageController extends WidgetController {
 		let parser = new DOMParser(); // init dom parser
 		let dom = parser.parseFromString(domstr, "text/html"); // inject result
 		let article = new xph().doc(dom).ctx(dom).craft('//*[@id="npkm5q_ZbqV4AM:"]"]').firstResult; // find interesting things
-		//this.mvc.view.update(article.textContent, article.getAttribute("href"));
+		this.mvc.view.update(article.textContent);
 		
 	}
 	
