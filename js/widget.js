@@ -57,7 +57,6 @@ class imageView extends WidgetView {
 		this.bloc.setAttribute("type","texte");
 		this.stage.appendChild(this.bloc);
 		
-		this.mvc.cotroller.select();
 		
 		this.footer.innerHTML = "valider"; //pour demarer la recherche.
 		SS.style(this.footer,{"userSelect": "none", "cursor":"pointer"});
@@ -70,10 +69,10 @@ class imageView extends WidgetView {
 		
 	}
 	
-	update(title, link) {
+	/*update(title, link) {
 		this.link.innerHTML = title;
 		HH.attr(this.link, {"href": "https://www.google.com/search?q=mot&client=firefox-b-e&source=lnms&tbm=isch"});
-	}
+	}*/
 	
 }
 
