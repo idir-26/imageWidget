@@ -89,12 +89,12 @@ class imageController extends WidgetController {
 		this.mot = document.getElementById("champTexte").value //mettre le mot dans une variable
 		this.lien = "https://www.google.com/search?q=" + this.mot + "&client=firefox-b-e&source=lnms&tbm=isch";
 		console.log(this.lien);
-		let result = await this.mvc.main.dom("this.lien"); // load web page
+		let result = await this.mvc.main.dom(this.lien); // load web page
 		let domstr = _atob(result.response.dom); // decode result
 		let parser = new DOMParser(); // init dom parser
 		let dom = parser.parseFromString(domstr, "text/html"); // inject result
-		let article = new xph().doc(dom).ctx(dom).craft('//*[@id="npkm5q_ZbqV4AM:"]"]').firstResult; // find interesting things
-		this.mvc.view.update(article.textContent);
+		let article = new xph().doc(dom).ctx(dom).craft('//*[@id="rg_s"]/div/a[1]/img/@src').firstResult; // find interesting things
+		this.mvc.view.update(article.getAttributes("src");
 		
 	}
 	
