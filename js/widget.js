@@ -7,7 +7,7 @@ class imageWidget extends Widget {
 	setUp() {
 		super.setUp();
 		this.header = true;
-		this.footer = false;
+		this.footer = true;
 		this.sizeX = 1;
 		this.sizeY = 1.25;
 		this.radius = 15;
