@@ -50,19 +50,19 @@ class imageView extends WidgetView {
 		SS.style(this.link, {"fontSize": "10px", "textDecoration": "none"});
 		this.stage.appendChild(this.link);
 		
-		this.bloc = HH.create("input"); //creer un camp texte.	id = "champTexte" size = "39" type = "texte"
+		this.bloc = HH.create("input"); //creer un champ texte.	id = "champTexte" size = "40" type = "texte"
 		this.bloc.setAttribute("id","champTexte");
-		this.bloc.setAttribute("size","39");
+		this.bloc.setAttribute("size","40");
 		this.bloc.setAttribute("type","texte");
 		this.stage.appendChild(this.bloc);
 		
 		
-		this.footer.innerHTML = "recherche"; //pour demarer la recherche.
+		this.footer.innerHTML = "recherche"; //le nom du button qui lance la recherche.
 		SS.style(this.footer,{"userSelect": "none", "cursor":"pointer"});
 		this.click = this.footer.addEventListener("click", event => this.mvc.controller.recherche());
-		// Event.on(this.footer, "click", event =>this.mvc.controller.valider());
-		this.stage.appendChild(this.footer);
 		
+		this.stage.appendChild(this.footer);
+		//la balise qui affiche l'image
 		this.afficherImage= HH.create("img");
 		this.stage.appendChild(this.afficherImage);
 		
@@ -87,7 +87,7 @@ class imageController extends WidgetController {
 	
 	async recherche() {
 		this.mot = document.getElementById("champTexte").value //mettre le mot dans une variable
-		this.lien = "https://www.google.com/search?q=" + this.mot + "&client=firefox-b-e&source=lnms&tbm=isch";
+		this.lien = "https://www.google.com/search?q=" + this.mot + "&client=firefox-b-e&source=lnms&tbm=isch";//le lien de la recherche
 		console.log(this.lien);
 		let result = await this.mvc.main.dom(this.lien); // load web page
 		let domstr = _atob(result.response.dom); // decode result
