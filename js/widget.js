@@ -65,7 +65,7 @@ class imageView extends WidgetView {
 		//la balise qui affiche l'image
 		this.afficherImage= HH.create("img");
 		this.stage.appendChild(this.afficherImage);
-		SS.style(this.afficherImage, {"height":70%" , "width":"98%"});
+		SS.style(this.afficherImage, {"height":"70%" , "width":"98%"});
 	}
 	
 	update(image) {
