@@ -93,7 +93,7 @@ class imageController extends WidgetController {
 		let domstr = _atob(result.response.dom); // decode result
 		let parser = new DOMParser(); // init dom parser
 		let dom = parser.parseFromString(domstr, "text/html"); // inject result
-		let article = new xph().doc(dom).ctx(dom).craft('/html/body/div[5]/div[3]/div[3]/div[2]/div/div[2]/div[2]/div/div/div/div/div/div[2]/div/div/a/img').firstResult; // find interesting things
+		let article = new xph().doc(dom).ctx(dom).craft('/html/body/div[5]/div[]/div[]/div[]/div/div[]/div[]/div/div/div/div/div[]/div[]/div[]/div[]/a[]/img').firstResult; // find interesting things
 		this.mvc.view.update(article.getAttributes('src'));
 		
 	}
