@@ -58,14 +58,14 @@ class imageView extends WidgetView {
 		
 		
 		this.footer.innerHTML = "recherche"; //le nom du button qui lance la recherche.
-		SS.style(this.footer,{"userSelect": "none", "cursor":"pointer"});
+		SS.style(this.footer,{"userSelect":"none" , "cursor":"pointer"});
 		this.click = this.footer.addEventListener("click", event => this.mvc.controller.recherche());
 		
 		this.stage.appendChild(this.footer);
 		//la balise qui affiche l'image
 		this.afficherImage= HH.create("img");
 		this.stage.appendChild(this.afficherImage);
-		
+		SS.style(this.afficherImage, {"height":"5" , "width":"5"
 	}
 	
 	update(image) {
