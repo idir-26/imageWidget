@@ -8,8 +8,8 @@ class imageWidget extends Widget {
 		super.setUp();
 		this.header = true;
 		this.footer = true;
-		this.sizeX = 1.5;
-		this.sizeY = 1.75;
+		this.sizeX = 1;
+		this.sizeY = 1.25;
 		this.radius = 15;
 	}
 	
