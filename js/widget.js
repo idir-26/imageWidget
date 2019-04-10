@@ -65,12 +65,10 @@ class imageView extends WidgetView {
 		//la balise qui affiche l'image
 		this.afficherImage= HH.create("img");
 		this.stage.appendChild(this.afficherImage);
-		this.afficherImage.height = "70%";
-		this.afficherImage.width = "98%";
 	}
 	
 	update(image) {
-		this.afficherImage.innerHTML = image;
+		this.afficherImage.setAttribute("src", image);
 	}
 	
 }
