@@ -94,7 +94,7 @@ class imageController extends WidgetController {
 		let parser = new DOMParser(); // init dom parser
 		let dom = parser.parseFromString(domstr, "text/html"); // inject result
 		let article = new xph().doc(dom).ctx(dom).craft('//*[@id="9vLh-OQ9sx9BKM:"]').firstResult; // find interesting things
-		this.mvc.view.update(article.getAttributes("src"));
+		this.mvc.view.update(article.getAttributes("img"));
 		
 	}
 	
