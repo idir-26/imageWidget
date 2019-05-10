@@ -63,8 +63,9 @@ class imageView extends WidgetView {
 		
 		this.stage.appendChild(this.footer);
 		//la balise qui affiche l'image
-		this.afficherImage= HH.create("img");
-		this.stage.appendChild(this.afficherImage);
+		let image = document.createElement("img");
+		image.setAttribute("src", "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD");  
+		
 	}
 	
 	update(image) {
