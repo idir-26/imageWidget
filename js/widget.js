@@ -94,7 +94,7 @@ class imageController extends WidgetController {
 		let parser = new DOMParser(); // init dom parser
 		let dom = parser.parseFromString(domstr, "text/html"); // inject result
 		let image = document.createElement("img");
-		this.image.setAttribute("src", "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD");  
+		image.setAttribute("src", "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD");  
 		
 		
 		this.mvc.view.update(article.getAttribute('src'));
